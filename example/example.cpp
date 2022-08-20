@@ -27,4 +27,18 @@ int main()
 
     for ( auto& f : gets )
         std::cout << f.get() << std::endl;
+
+    client.remove( "picture_2" ).get();
+
+    try
+    {
+        client.get( "picture_2" ).get();
+    }
+    catch ( const imd::exception& e )
+    {
+        std::cout << "\nIt is an intentional error.\n"
+                  << "Here is the error message for the operation :\n"
+                  << e.what()
+                  << std::endl;
+    }
 }
