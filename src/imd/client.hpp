@@ -28,7 +28,7 @@ public:
 
 private:
 
-    connection::pointer& next();
+    inline connection::pointer& next();
     inline void validate_key( const std::string& ) const;
 
     using connections = std::vector<connection::pointer>;
